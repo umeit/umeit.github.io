@@ -1,33 +1,83 @@
-include mixins
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Ben Wong,wenbinben@gmail.com"><title>MyFirstPost · Hexo</title><meta name="description" content="产品经验分享为什么要和工程师讲产品
+硅谷不需要产品经理MacTalk（池建强）
 
-extends partial/layout
+Google 、Facebook、Airbnb优秀的公司、有工程师文化的公司，比如说咱们这边。在硅谷产品经理是个被弱化的角色，尤其是技术驱动的公司。
 
-block site_title
-    != page.title + " · " + config.title
-
-block description
-    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
-    meta(name="description", content=desc)
-
-block content
-  .autopagerize_page_element: .content: .post-page
-    include mixins
-    +make_post(page, true)
-    .share
-      .evernote 
-        a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
-      .weibo 
-        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
-      .twitter 
-        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
-    - var prev = page.prev ? page.prev.path : false;
-    - var next = page.next ? page.next.path : false; 
-    .pagination
-      ul.clearfix
-        if prev
-          li.pre.pagbuttons
-            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
-        if next
-          li.next.pagbuttons
-            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
-    include partial/comments
+你们那儿产品经理的角色重要吗？重要啊啊，真的呀，怎么个重要法呢？就"><meta name="keywords" content="Hexo,HTML,Ben,CSS,安卓,android,Linux,linuxdeepin"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">Hexo</a></h3><div class="description"><p>Nothing lasts forever.</p></div></div></div><ul class="social-links"><li><a href="https://twitter.com/Ben_wenbin"><i class="fa fa-twitter"></i></a></li><li><a href="http://instagram.com/hwbinbenben"><i class="fa fa-instagram"></i></a></li><li><a href="/atom.xml"><i class="fa fa-rss"></i></a></li><li><a href="http://weibo.com/ben0036"><i class="fa fa-weibo"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai</a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img src="https://secure.gravatar.com/avatar/e71df8021446fe9759a9928b1dd5c28d?s=180&amp;r=G&amp;d="></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>MyFirstPost</a></h3></div><div class="post-content"><h1 id="产品经验分享"><a href="#产品经验分享" class="headerlink" title="产品经验分享"></a>产品经验分享</h1><h2 id="为什么要和工程师讲产品"><a href="#为什么要和工程师讲产品" class="headerlink" title="为什么要和工程师讲产品"></a>为什么要和工程师讲产品</h2><blockquote>
+<p>硅谷不需要产品经理<br>MacTalk（池建强）</p>
+</blockquote>
+<p>Google 、Facebook、Airbnb<br>优秀的公司、有工程师文化的公司，比如说咱们这边。<br>在硅谷产品经理是个被弱化的角色，尤其是技术驱动的公司。</p>
+<blockquote>
+<p>你们那儿产品经理的角色重要吗？<br>重要啊<br>啊，真的呀，怎么个重要法呢？<br>就是他们会组织会议啊，协调资源啊，如果他们不在会非常麻烦。<br>有什么麻烦的？<br>那我就要写会议纪要了呀，之前都是他们发给我的。。。  </p>
+</blockquote>
+<p>在硅谷产品经理的工作内容更多是：</p>
+<ul>
+<li>协调资源</li>
+<li>组织会议</li>
+<li>写 Spec</li>
+</ul>
+<p>所以优秀的工程师都有深度参与项目的设计和实现的能力</p>
+<h2 id="产品诞生的过程"><a href="#产品诞生的过程" class="headerlink" title="产品诞生的过程"></a>产品诞生的过程</h2><ul>
+<li>市场与需求</li>
+<li>设计与研发</li>
+<li>运营与反馈<br>这次要分享的<br>打磨用户体验、打造平台产品、了解行业生态<br>以上都不讲<br>主要聊一聊如何与需求（用户）打交道 - 并且有可执行性</li>
+</ul>
+<p>抛砖引玉</p>
+<p>这两点可说的太多了，我自己也没能思考清楚，所以只分享我任务最重要的，最有效的。</p>
+<p>用心沟通</p>
+<h2 id="如何处理需求（产品思维的第一次觉醒）"><a href="#如何处理需求（产品思维的第一次觉醒）" class="headerlink" title="如何处理需求（产品思维的第一次觉醒）"></a>如何处理需求（产品思维的第一次觉醒）</h2><h3 id="清晰的描述需求（建立共识）"><a href="#清晰的描述需求（建立共识）" class="headerlink" title="清晰的描述需求（建立共识）"></a>清晰的描述需求（建立共识）</h3><blockquote>
+<p>X 公司的客户满意率低，市场占有率去年下降了10%，因为用户执行任务 X，Y 和 Z 时工具不趁手，用户执行这些任务是为了满足目标 G  </p>
+</blockquote>
+<ul>
+<li>用户的团队（或部门或公司）遇到了什么问题（宏观的背景）</li>
+<li>因为什么原因导致的（具体的原因）</li>
+<li>用户的目标是什么</li>
+</ul>
+<h3 id="做不做"><a href="#做不做" class="headerlink" title="做不做"></a>做不做</h3><ul>
+<li>我们的主要用户会有这种需求吗？</li>
+<li>我们的次要用户会有这种需求吗？</li>
+<li>这用需求频繁吗？</li>
+<li>用户自己解决的成本高吗？（提高口碑）</li>
+</ul>
+<h3 id="如何做"><a href="#如何做" class="headerlink" title="如何做"></a>如何做</h3><ul>
+<li>多问「为什么」</li>
+<li>核心应用场景是什么？<ul>
+<li>易于学习不是唯一目标</li>
+</ul>
+</li>
+</ul>
+<h3 id="开干之前"><a href="#开干之前" class="headerlink" title="开干之前"></a>开干之前</h3><p>预测<br>反问「如果这个功能上线一周后下线，用户会感觉失望吗？」</p>
+<h3 id="清晰描述愿景"><a href="#清晰描述愿景" class="headerlink" title="清晰描述愿景"></a>清晰描述愿景</h3><blockquote>
+<p>产品的 X 特性能提高用户执行任务 X， Y 和 Z 的准确性、效率等，避免他们当前面临的 A、B 和 C 问题，从而帮助用户完成目标 G，这能显著提高 X 公司的客户满意度，提高时长份额。  </p>
+<ul>
+<li>我们要设计的功能是什么</li>
+<li>解决了哪些问题</li>
+<li>可以改善用户哪些方面的问题</li>
+<li>用户的目标是否可以满足</li>
+<li>用户的团队（或部门或公司）遇的问题会因此解决吗？</li>
+</ul>
+</blockquote>
+<h2 id="理解用户"><a href="#理解用户" class="headerlink" title="理解用户"></a>理解用户</h2><h3 id="目标-VS-任务（产品思维的第二次觉醒）"><a href="#目标-VS-任务（产品思维的第二次觉醒）" class="headerlink" title="目标 VS. 任务（产品思维的第二次觉醒）"></a>目标 VS. 任务（产品思维的第二次觉醒）</h3><ul>
+<li>买冰激凌</li>
+<li>旅行<h3 id="人物模型（优秀产品的必经之路）"><a href="#人物模型（优秀产品的必经之路）" class="headerlink" title="人物模型（优秀产品的必经之路）"></a>人物模型（优秀产品的必经之路）</h3>微信<blockquote>
+<p>任何一个产品都不可能满足所有人的需求，我们必须要做很多的取舍。<br>张小龙</p>
+</blockquote>
+</li>
+</ul>
+<p>我们要停止想象 | 每个人都是陈恺</p>
+<ul>
+<li>不停扩张功能（解决优先级的问题）</li>
+<li>确定产品的功能及行为</li>
+<li>团队交流（有统一的术语与语境）</li>
+<li>共识（为什么做这个需求而不是做别的需求）</li>
+<li>衡量设计，最廉洁好用的测试工具（用模型来测试，例如王伟（模型）会使用这个功能吗？）</li>
+<li>助力营销（销售团队需要人物模型来寻找与产品匹配的目标客户）<h3 id="模型可避免的陷阱"><a href="#模型可避免的陷阱" class="headerlink" title="模型可避免的陷阱"></a>模型可避免的陷阱</h3></li>
+<li>弹性用户</li>
+<li>自我参考设计</li>
+<li>边缘功能设计</li>
+</ul>
+<p>上面没有涉及到任何的解决方案，所以在设计解决方案前，必须确认上述过程</p>
+<p>原型的雕琢（用户的路径，数据的展示，按钮的位置）让开发阶段更聚焦</p>
+<p>题外话优化产品与团队<br>指标式优化<br>-避免- 解决冲突</p>
+<p>#分享#</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2017-02-15</span><i class="fa fa-tag"></i></div></div></div></div><div class="share"><div class="evernote"> <a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"> <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"> <a href="http://twitter.com/home?status=,http://yoursite.com/2017/02/15/MyFirstPost/,Hexo,MyFirstPost,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a role="navigation" href="/2017/02/15/hello-world/" title="Hello World" class="btn">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
